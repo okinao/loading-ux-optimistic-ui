@@ -86,8 +86,7 @@ export default function App() {
       <div className="max-w-2xl mx-auto space-y-6">
         
 
-        
-        <div className="bg-slate-100 rounded-lg p-4 min-h-[400px] max-h-[500px] overflow-y-auto space-y-3">
+        <div className="bg-slate-100 rounded-lg p-4 min-h-[200px] max-h-[300px] overflow-y-auto space-y-3">
           {messages.length === 0 ? (
             <div className="flex items-center justify-center h-full text-slate-400">
               メッセージを送信してみてください
