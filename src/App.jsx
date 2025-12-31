@@ -84,25 +84,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 p-8">
       <div className="max-w-2xl mx-auto space-y-6">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">
-            オプティミスティックUI デモ
-          </h1>
-          <p className="text-slate-600 mb-4">
-            サーバーレスポンスを待たずにUIを即座に更新
-          </p>
-          <label className="inline-flex items-center gap-2 text-sm">
-            <input
-              type="checkbox"
-              checked={shouldFail}
-              onChange={(e) => setShouldFail(e.target.checked)}
-              className="rounded"
-            />
-            <span>次のメッセージを失敗させる（エラーハンドリングのデモ）</span>
-          </label>
-        </div>
+        
 
-        {/* チャットエリア */}
+        
         <div className="bg-slate-100 rounded-lg p-4 min-h-[400px] max-h-[500px] overflow-y-auto space-y-3">
           {messages.length === 0 ? (
             <div className="flex items-center justify-center h-full text-slate-400">
@@ -115,7 +99,7 @@ export default function App() {
           )}
         </div>
 
-        {/* 入力フォーム */}
+        
         <form onSubmit={handleSubmit} className="flex gap-2">
           <input
             type="text"
@@ -133,13 +117,15 @@ export default function App() {
         </form>
 
         <div className="bg-white rounded-lg p-6 shadow-sm">
-          <h2 className="font-bold text-lg mb-2">仕組み</h2>
-          <ol className="list-decimal list-inside space-y-2 text-slate-700">
-            <li>メッセージをすぐに画面に表示（status: sending）</li>
-            <li>バックグラウンドでサーバーに送信</li>
-            <li>成功したらステータスを更新（status: sent）</li>
-            <li>失敗したらエラー表示と再送信オプションを提供</li>
-          </ol>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={shouldFail}
+              onChange={(e) => setShouldFail(e.target.checked)}
+              className="w-4 h-4"
+            />
+            <span className="text-sm text-slate-700">送信を失敗させる（エラーデモ）</span>
+          </label>
         </div>
       </div>
     </div>
